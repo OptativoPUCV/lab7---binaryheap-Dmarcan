@@ -15,3 +15,23 @@ Wed 10 May 2023 12:28:55 AM UTC:
  tests:  0|4
 total_score: 0/70
 053ce65
+Wed 10 May 2023 12:29:41 AM UTC: 
+ heap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:40:14: error: array subscript ‘Heap {aka struct Heap}[0]’ is partly outside array bounds of ‘unsigned char[3]’ [-Werror=array-bounds]
+   40 |     nuevoHeap->capac=3;
+      |              ^~
+heap.c:38:28: note: referencing an object of size 3 allocated by ‘malloc’
+   38 |     Heap* nuevoHeap=(Heap*)malloc(3);
+      |                            ^~~~~~~~~
+heap.c:41:14: error: array subscript ‘Heap {aka struct Heap}[0]’ is partly outside array bounds of ‘unsigned char[3]’ [-Werror=array-bounds]
+   41 |     nuevoHeap->size=0;
+      |              ^~
+heap.c:38:28: note: referencing an object of size 3 allocated by ‘malloc’
+   38 |     Heap* nuevoHeap=(Heap*)malloc(3);
+      |                            ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+391b0e4
