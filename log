@@ -362,3 +362,20 @@ heap.c:44:12: error: unused variable ‘cont’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 c1d71ac
+Wed 10 May 2023 02:17:34 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:53:16: error: assignment to ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   53 |             aux=pq->heapArray[k].data;
+      |                ^
+heap.c:55:42: error: cast to pointer from integer of different size [-Werror=int-to-pointer-cast]
+   55 |             pq->heapArray[pq->size].data=(void*)aux;
+      |                                          ^
+heap.c:44:12: error: unused variable ‘cont’ [-Werror=unused-variable]
+   44 |     size_t cont=0;
+      |            ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+31fc480
