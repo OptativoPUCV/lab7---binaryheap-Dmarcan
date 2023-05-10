@@ -645,3 +645,15 @@ Wed 10 May 2023 11:36:13 PM UTC:
  tests:  7|1
 total_score: 50/70
 9de45db
+Wed 10 May 2023 11:54:23 PM UTC: 
+ heap.c | 20 +++++++++++++++++++-
+ 1 file changed, 19 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c:117:5: error: expected identifier or ‘(’ before ‘return’
+  117 |     return;
+      |     ^~~~~~
+heap.c:118:1: error: expected identifier or ‘(’ before ‘}’ token
+  118 | }
+      | ^
+Compilation failed
+d7ee46a

@@ -67,6 +67,24 @@ void heap_pop(Heap* pq){
     pq->heapArray[0].data=pq->heapArray[pq->size-1].data;
     pq->heapArray[0].priority=pq->heapArray[pq->size-1].priority;
     pq->size--;
+    size_t k=0;
+    size_t ultiK=k;
+    while (k<pq->size)
+    {
+        ultiK=k;
+        if (pq->heapArray[k+1].priority<pq->heapArray[k+2].priority)k=k+2;
+        else k++;
+        int aux=pq->heapArray[k].priority;
+        pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
+        pq->heapArray[ultiK].priority=aux;
+            
+        void* data=pq->heapArray[k].data;
+        pq->heapArray[k].data=pq->heapArray[ultiK].data;
+        pq->heapArray[ultiK].data=data;
+        
+            
+    }
+    /*
     for (size_t k=0;k<pq->size;k++)
     {
         
@@ -92,7 +110,7 @@ void heap_pop(Heap* pq){
             pq->heapArray[k+1].data=data;
             
         }
-        
+        */
         
     }
     
