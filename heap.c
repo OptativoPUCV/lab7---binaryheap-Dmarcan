@@ -63,7 +63,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
 void heap_pop(Heap* pq){
     if (pq->size==0)return;
-    printf("%i",pq->heapArray[pq->size].priority);
+    printf("%i",pq->heapArray[pq->size-1].priority);
     pq->heapArray[0].data=pq->heapArray[pq->size-1].data;
     pq->heapArray[0].priority=pq->heapArray[pq->size-1].priority;
     
