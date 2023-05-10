@@ -18,7 +18,7 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-    if (pq->size==0)return NULL;
+    if (pq->heapArray==NULL)return NULL;
     return pq->heapArray[0].data;
 }
 
@@ -28,9 +28,6 @@ void heap_push(Heap* pq, void* data, int priority){
 
 }
 
-/*Implemente la función `void* heap_top(Heap* pq)`. Esta función retorna el dato con mayor prioridad del montículo. 
-    > Recuerde que este dato se encuentra en la raíz el montículo, es decir, en la primera casilla del arreglo.
-*/
 void heap_pop(Heap* pq){
     return;
 }
