@@ -44,6 +44,7 @@ void heap_push(Heap* pq, void* data, int priority){
     int ultiK=pq->size;
     for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
     {
+        printf("k %i  ulti k %i\n",k,ultiK);
         if (pq->heapArray[k].priority<pq->heapArray[ultiK].priority)
         {
             int aux=pq->heapArray[k].priority;
