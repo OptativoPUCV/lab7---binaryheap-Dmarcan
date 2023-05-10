@@ -67,7 +67,7 @@ void heap_pop(Heap* pq){
     pq->heapArray[0].data=pq->heapArray[pq->size-1].data;
     pq->heapArray[0].priority=pq->heapArray[pq->size-1].priority;
     pq->size--;
-    pritf("%i\n",pq->size);
+    printf("%i\n",pq->size);
     size_t k=0;
     size_t ultiK=k;
     while (k<pq->size)
