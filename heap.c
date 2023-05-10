@@ -41,25 +41,25 @@ void heap_push(Heap* pq, void* data, int priority){
     bool entro=false;
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-    //size_t cont=0;
+    size_t cont=0;
     for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
     {
         if (pq->heapArray[k].priority<pq->heapArray[pq->size].priority)
         {
-            void* aux=pq->heapArray[k].priority;
+            int aux=pq->heapArray[k].priority;
             pq->heapArray[k].priority=pq->heapArray[pq->size].priority;
-            pq->heapArray[pq->size].priority=(void*)aux;
-
-            aux=pq->heapArray[k].data;
+            pq->heapArray[pq->size].priority=aux;
+            
+            void* data=pq->heapArray[k].data;
             pq->heapArray[k].data=pq->heapArray[pq->size].data;
-            pq->heapArray[pq->size].data=aux;
+            pq->heapArray[pq->size].data=data;
         }
 
-        /*
+        
         if (k==0)entro=true;
         printf("LOL %i\n",k);
         cont++;
-        if (cont==10)return;*/
+        if (cont==10)return;
     }
 }
 
