@@ -62,6 +62,11 @@ void heap_push(Heap* pq, void* data, int priority){
 /*Implemente la función `void heap_pop(Heap* pq)`. Esta función elimina el mayor elemento del montículo (la raíz). Si no recuerda el procedimiento puede ver las [diapositivas](https://docs.google.com/presentation/d/1ZjXWMf6g05WdICqvno_oyRvorjAThABgbRGbEqc7mYU/edit#slide=id.g10c6e3d52b_0_98).*/
 
 void heap_pop(Heap* pq){
+    if (pq->size==0)return;
+    pq->heapArray[0].data=pq->heapArray[pq->size].data;
+    pq->heapArray[0].priority=pq->heapArray[pq->size].priority;
+    
+    
     return;
 }
 /*Implemente la función `Heap* createHeap()`. Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
