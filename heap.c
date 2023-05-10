@@ -39,11 +39,13 @@ void heap_push(Heap* pq, void* data, int priority){
     }
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-    /*
-    for (size_t k=pq->size;k>=0;k/=2)
+    size_t cont=0;
+    for (size_t k=pq->size;k>=0;k=(k-1)/2)
     {
         printf("LOL");
-    }*/
+        cont++;
+        if (cont==10)return;
+    }
 }
 
 void heap_pop(Heap* pq){
