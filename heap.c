@@ -42,21 +42,21 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
     //size_t cont=0;
+    size_t ultiK=pq->size;
     for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
     {
-        printf("LOL %i\n",k);
-        if (pq->heapArray[k].priority<pq->heapArray[pq->size].priority)
+        if (pq->heapArray[k].priority<pq->heapArray[ultiK].priority)
         {
             //printf("LOL %i\n",k);
             int aux=pq->heapArray[k].priority;
-            pq->heapArray[k].priority=pq->heapArray[pq->size].priority;
-            pq->heapArray[pq->size].priority=aux;
+            pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
+            pq->heapArray[ultiK].priority=aux;
             
             void* data=pq->heapArray[k].data;
-            pq->heapArray[k].data=pq->heapArray[pq->size].data;
-            pq->heapArray[pq->size].data=data;
+            pq->heapArray[k].data=pq->heapArray[ultiK].data;
+            pq->heapArray[ultiK].data=data;
         }
-
+        ultiK=k;
         
         if (k==0)entro=true;
         //printf("LOL %i\n",k);
