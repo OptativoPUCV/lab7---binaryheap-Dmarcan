@@ -33,7 +33,7 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
     printf("%i",pq->size);
     //if (pq->size==0)return;
-    return (void)pq->heapArray[0].data;
+    return pq->heapArray[0].data;
 }
 /*Implemente la función `Heap* createHeap()`. Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
    > Recuerde reservar memoria para el Heap y también para el arreglo `heapArray`.
