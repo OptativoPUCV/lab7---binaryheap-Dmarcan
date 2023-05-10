@@ -37,6 +37,8 @@ void heap_push(Heap* pq, void* data, int priority){
         }
         pq->capac*=2;
     }
+    pq->heapArray[pq->size+1].data=data;
+    pq->heapArray[pq->size+1].priority=priority;
 }
 
 void heap_pop(Heap* pq){
