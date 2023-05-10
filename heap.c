@@ -40,9 +40,9 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
     size_t cont=0;
-    for (size_t k=pq->size;k>=0;k=(k-1)/2)
+    for (int k=pq->size;k>=0;k=(k-1)/2)
     {
-        printf("LOL %zd\n",k);
+        printf("LOL %i\n",k);
         cont++;
         if (cont==10)return;
     }
