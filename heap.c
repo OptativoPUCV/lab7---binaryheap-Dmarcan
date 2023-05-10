@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
@@ -37,11 +38,13 @@ void heap_push(Heap* pq, void* data, int priority){
         }
         pq->capac*=2;
     }
+    bool entro=false;
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
     size_t cont=0;
-    for (int k=pq->size;k>0;k=(k-1)/2)
+    for (int k=pq->size;k>0 || entro=false;k=(k-1)/2)
     {
+        if (k==0)entro=true;
         printf("LOL %i\n",k);
         cont++;
         if (cont==10)return;
