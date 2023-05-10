@@ -41,7 +41,7 @@ void heap_push(Heap* pq, void* data, int priority){
     bool entro=false;
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-    size_t cont=0;
+    //size_t cont=0;
     for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
     {
         if (pq->heapArray[k].priority<pq->heapArray[pq->size].priority)
