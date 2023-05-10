@@ -30,6 +30,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     if (pq->size==pq->capac)
     {
+        printf("kk");
         pq->heapArray=(heapElem*)realloc(pq->heapArray, ((pq->capac)*2)*sizeof(heapElem));
         if (pq->heapArray==NULL) 
         {
@@ -59,7 +60,7 @@ void heap_push(Heap* pq, void* data, int priority){
         ultiK=k;
         
         if (k==0)entro=true;
-        printf("LOL %i\n",k);
+        //printf("LOL %i\n",k);
         //cont++;
         //if (cont==10)return;
     }
