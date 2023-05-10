@@ -31,13 +31,13 @@ void heap_push(Heap* pq, void* data, int priority){
     if (pq->size==pq->capac)
     {
         printf("kk");
-        pq->heapArray=(heapElem*)realloc(pq->heapArray, ((pq->capac)*2)*sizeof(heapElem));
+        pq->heapArray=(heapElem*)realloc(pq->heapArray, ((pq->capac)*2+1)*sizeof(heapElem));
         if (pq->heapArray==NULL) 
         {
             free(pq);
             return;
         }
-        pq->capac*=2;
+        pq->capac*=2+1;
     }
     bool entro=false;
     pq->heapArray[pq->size].data=data;
