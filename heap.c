@@ -30,7 +30,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     if (pq->size==pq->capac)
     {
-        printf("kk");
+        //printf("kk");
         pq->heapArray=(heapElem*)realloc(pq->heapArray, (((pq->capac)*2)+1)*sizeof(heapElem));
         if (pq->heapArray==NULL) 
         {
