@@ -30,7 +30,6 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     if (pq->size==pq->capac)
     {
-        //printf("kk");
         pq->heapArray=(heapElem*)realloc(pq->heapArray, (((pq->capac)*2)+1)*sizeof(heapElem));
         if (pq->heapArray==NULL) 
         {
@@ -42,13 +41,11 @@ void heap_push(Heap* pq, void* data, int priority){
     bool entro=false;
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-    //size_t cont=0;
-    size_t ultiK=pq->size;
+    int ultiK=pq->size;
     for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
     {
         if (pq->heapArray[k].priority<pq->heapArray[ultiK].priority)
         {
-            //printf("LOL %i\n",k);
             int aux=pq->heapArray[k].priority;
             pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
             pq->heapArray[ultiK].priority=aux;
@@ -58,11 +55,7 @@ void heap_push(Heap* pq, void* data, int priority){
             pq->heapArray[ultiK].data=data;
         }
         ultiK=k;
-        
         if (k==0)entro=true;
-        //printf("LOL %i\n",k);
-        //cont++;
-        //if (cont==10)return;
     }
     pq->size++;
 }
