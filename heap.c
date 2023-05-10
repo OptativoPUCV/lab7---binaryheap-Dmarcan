@@ -42,7 +42,7 @@ void heap_push(Heap* pq, void* data, int priority){
     size_t cont=0;
     for (size_t k=pq->size;k>=0;k=(k-1)/2)
     {
-        printf("LOL");
+        printf("LOL %zd\n",k);
         cont++;
         if (cont==10)return;
     }
