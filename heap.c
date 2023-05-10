@@ -31,8 +31,7 @@ void heap_push(Heap* pq, void* data, int priority){
     > Recuerde que este dato se encuentra en la raíz el montículo, es decir, en la primera casilla del arreglo.
 */
 void heap_pop(Heap* pq){
-    printf("%p\n",pq->heapArray[0].data);
-    if (pq->size==0)return;
+    //if (pq->size==0)return;
     printf("%p\n",pq->heapArray[0].data);
     //pq->heapArray->data[0];
     return (void)pq->heapArray[0].data;
