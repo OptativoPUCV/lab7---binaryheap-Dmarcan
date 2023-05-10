@@ -657,3 +657,9 @@ heap.c:118:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 d7ee46a
+Wed 10 May 2023 11:54:41 PM UTC: 
+ heap.c | 3 ---
+ 1 file changed, 3 deletions(-)
+ tests:  7|1
+total_score: 60/70
+0edfacd
