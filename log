@@ -669,3 +669,15 @@ Wed 10 May 2023 11:55:08 PM UTC:
  tests:  7|1
 total_score: 60/70
 ef84fb9
+Wed 10 May 2023 11:58:54 PM UTC: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:70:5: error: implicit declaration of function ‘pritf’; did you mean ‘printf’? [-Werror=implicit-function-declaration]
+   70 |     pritf("%i\n",pq->size);
+      |     ^~~~~
+      |     printf
+cc1: all warnings being treated as errors
+Compilation failed
+9f68da5
