@@ -61,6 +61,7 @@ void heap_push(Heap* pq, void* data, int priority){
         //cont++;
         //if (cont==10)return;
     }
+    pq->size++;
 }
 
 void heap_pop(Heap* pq){
