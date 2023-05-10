@@ -70,7 +70,7 @@ void heap_pop(Heap* pq){
     for (size_t k=0;k<pq->size;k=(k*2)+1)
     {
         if (pq->heapArray[k].priority<pq->heapArray[k+1].priority)
-        {/*
+        {
             int aux=pq->heapArray[k].priority;
             pq->heapArray[k].priority=pq->heapArray[k+1].priority;
             pq->heapArray[k+1].priority=aux;
@@ -78,7 +78,7 @@ void heap_pop(Heap* pq){
             void* data=pq->heapArray[k].data;
             pq->heapArray[k].data=pq->heapArray[k+1].data;
             pq->heapArray[k+1].data=data;
-            */
+            
         }
     }
     
