@@ -57,9 +57,9 @@ void heap_push(Heap* pq, void* data, int priority){
 
         
         if (k==0)entro=true;
-        printf("LOL %i\n",k);
-        cont++;
-        if (cont==10)return;
+        //printf("LOL %i\n",k);
+        //cont++;
+        //if (cont==10)return;
     }
 }
 

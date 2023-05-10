@@ -472,3 +472,14 @@ Wed 10 May 2023 02:20:39 AM UTC:
  tests:  2|2
 total_score: 20/70
 7d3d882
+Wed 10 May 2023 02:21:01 AM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:44:12: error: unused variable ‘cont’ [-Werror=unused-variable]
+   44 |     size_t cont=0;
+      |            ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+2cce2c1
