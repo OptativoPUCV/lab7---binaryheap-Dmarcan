@@ -78,11 +78,12 @@ void heap_pop(Heap* pq){
     printf("%i\n",pq->size);
     size_t k=0;
     size_t ultiK=k;
+    
     while (k<pq->size)
     {
         ultiK=k;
-        if (pq->heapArray[k+1].priority<pq->heapArray[k+2].priority)k=k+2;
-        else k++;
+        if (pq->heapArray[k+1].priority<pq->heapArray[k+2].priority)k=(2*k)+2;
+        else k=(2*k)+1;
         int aux=pq->heapArray[k].priority;
         pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
         pq->heapArray[ultiK].priority=aux;
