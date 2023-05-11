@@ -60,7 +60,15 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->size++;
 }
 /*Implemente la función `void heap_pop(Heap* pq)`. Esta función elimina el mayor elemento del montículo (la raíz). Si no recuerda el procedimiento puede ver las [diapositivas](https://docs.google.com/presentation/d/1ZjXWMf6g05WdICqvno_oyRvorjAThABgbRGbEqc7mYU/edit#slide=id.g10c6e3d52b_0_98).*/
-
+void mostrarArreglo(Heap* pq)
+{
+    printf("[");
+    for (size_t k=0;k<pq->size;k++)
+    {
+        printf(" %i ",pq->heapArray[k].priority);
+    }
+    printf("]\n");
+}
 void heap_pop(Heap* pq){
     if (pq->size==0)return;
     //printf("%i",pq->heapArray[pq->size-1].priority);
@@ -83,6 +91,7 @@ void heap_pop(Heap* pq){
         pq->heapArray[k].data=pq->heapArray[ultiK].data;
         pq->heapArray[ultiK].data=data;
     }
+    mostrarArreglo(pq);
     return;
 }
 /*Implemente la función `Heap* createHeap()`. Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
