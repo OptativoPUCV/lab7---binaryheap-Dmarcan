@@ -75,7 +75,7 @@ void heap_pop(Heap* pq){
     pq->heapArray[0].data=pq->heapArray[pq->size-1].data;
     pq->heapArray[0].priority=pq->heapArray[pq->size-1].priority;
     pq->size--;
-    printf("%i\n",pq->size);
+    //printf("%i\n",pq->size);
     size_t k=0;
     size_t ultiK=k;
     
@@ -92,7 +92,7 @@ void heap_pop(Heap* pq){
         pq->heapArray[k].data=pq->heapArray[ultiK].data;
         pq->heapArray[ultiK].data=data;
     }
-    mostrarArreglo(pq);
+    //mostrarArreglo(pq);
     return;
 }
 /*Implemente la función `Heap* createHeap()`. Esta función crea un nuevo dato de tipo Heap inicializando sus variables. Considere que la capacidad incial es de 3 casillas para el arreglo.
