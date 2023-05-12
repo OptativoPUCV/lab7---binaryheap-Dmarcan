@@ -35,18 +35,8 @@ void* heap_top(Heap* pq){
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-    if (pq->size == pq->capac)
-    {
-        agrandarArreglo(pq);
-        /*
-        pq->heapArray = (heapElem*) realloc(pq->heapArray,((pq->capac * 2) + 1) * sizeof(heapElem));
-        if (pq->heapArray == NULL) 
-        {
-            free(pq);
-            return;
-        }
-        pq->capac = (pq->capac * 2) +1;*/
-    }
+    if (pq->size == pq->capac) agrandarArreglo(pq);
+        
     
     bool entro = false;
     pq->heapArray[pq->size].data = data;
