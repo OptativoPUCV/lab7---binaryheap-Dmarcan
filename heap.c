@@ -19,20 +19,20 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-    if (pq->size==0)return NULL;
+    if (pq->size == 0)return NULL;
     return pq->heapArray[0].data;
 }
 
 void heap_push(Heap* pq, void* data, int priority){
-    if (pq->size==pq->capac)
+    if (pq->size == pq->capac)
     {
-        pq->heapArray=(heapElem*)realloc(pq->heapArray, (((pq->capac)*2)+1)*sizeof(heapElem));
-        if (pq->heapArray==NULL) 
+        pq->heapArray = (heapElem*) realloc(pq->heapArray,((pq->capac * 2) + 1) * sizeof(heapElem));
+        if (pq->heapArray == NULL) 
         {
             free(pq);
             return;
         }
-        pq->capac=(pq->capac*2)+1;
+        pq->capac = (pq->capac * 2) +1;
     }
     
     bool entro=false;
@@ -83,15 +83,15 @@ void heap_pop(Heap* pq){
 }
 
 Heap* createHeap(){
-    Heap* nuevoHeap=(Heap*)malloc(sizeof(Heap));
-    if (nuevoHeap==NULL)return NULL;
-    nuevoHeap->heapArray=(heapElem*)malloc(3*sizeof(heapElem));
-    if (nuevoHeap->heapArray==NULL)
+    Heap* nuevoHeap = (Heap*) malloc(sizeof(Heap));
+    if (nuevoHeap==NULL) return NULL;
+    nuevoHeap->heapArray = (heapElem*) malloc(3 * sizeof(heapElem));
+    if (nuevoHeap->heapArray == NULL)
     {
         free(nuevoHeap);
         return NULL;
     }
-    nuevoHeap->capac=3;
-    nuevoHeap->size=0;
+    nuevoHeap->capac = 3;
+    nuevoHeap->size = 0;
     return nuevoHeap;
 }
