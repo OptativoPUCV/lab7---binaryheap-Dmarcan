@@ -35,24 +35,24 @@ void heap_push(Heap* pq, void* data, int priority){
         pq->capac = (pq->capac * 2) +1;
     }
     
-    bool entro=false;
-    pq->heapArray[pq->size].data=data;
-    pq->heapArray[pq->size].priority=priority;
-    int ultiK=pq->size;
-    for (int k=pq->size;k>0 || entro==false;k=(k-1)/2)
+    bool entro = false;
+    pq->heapArray[pq->size].data = data;
+    pq->heapArray[pq->size].priority = priority;
+    int anteriorK = pq->size;
+    for (int k = pq->size;k > 0 || entro == false;k = (k-1)/2)
     {
-        if (pq->heapArray[k].priority<pq->heapArray[ultiK].priority)
+        if (pq->heapArray[k].priority < pq->heapArray[anteriorK].priority)
         {
-            int aux=pq->heapArray[k].priority;
-            pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
-            pq->heapArray[ultiK].priority=aux;
+            int aux = pq->heapArray[k].priority;
+            pq->heapArray[k].priority = pq->heapArray[anteriorK].priority;
+            pq->heapArray[anteriorK].priority = aux;
             
-            void* data=pq->heapArray[k].data;
-            pq->heapArray[k].data=pq->heapArray[ultiK].data;
-            pq->heapArray[ultiK].data=data;
+            void* data = pq->heapArray[k].data;
+            pq->heapArray[k].data = pq->heapArray[anteriorK].data;
+            pq->heapArray[anteriorK].data = data;
         }
-        ultiK=k;
-        if (k==0)entro=true;
+        anteriorK = k;
+        if (k == 0) entro = true;
     }
     pq->size++;
 }
@@ -64,20 +64,20 @@ void heap_pop(Heap* pq){
     pq->size--;
     
     size_t k=0;
-    size_t ultiK=k;
+    size_t anteriorK=k;
     while (k<pq->size)
     {
-        ultiK=k;
+        anteriorK=k;
         if (pq->heapArray[k+1].priority<pq->heapArray[k+2].priority)k=(2*k)+2;
         else k=(2*k)+1;
         
         int aux=pq->heapArray[k].priority;
-        pq->heapArray[k].priority=pq->heapArray[ultiK].priority;
-        pq->heapArray[ultiK].priority=aux;
+        pq->heapArray[k].priority=pq->heapArray[anteriorK].priority;
+        pq->heapArray[anteriorK].priority=aux;
             
         void* data=pq->heapArray[k].data;
-        pq->heapArray[k].data=pq->heapArray[ultiK].data;
-        pq->heapArray[ultiK].data=data;
+        pq->heapArray[k].data=pq->heapArray[anteriorK].data;
+        pq->heapArray[anteriorK].data=data;
     }
     return;
 }
